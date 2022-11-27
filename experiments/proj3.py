@@ -9,7 +9,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--setting', type=int, default=0)
     args = parser.parse_args()
-    data_dir = '../data2'
+    data_dir = '../data3'
 
     exp_prefix = 'exp'
     # this wi
@@ -19,8 +19,8 @@ if __name__ == '__main__':
                 'num_Q','q',[2],
                 'utd_ratio','uf',[1],
                 'lr', 'lr', [3e-4], # 3e-4 is the default value
-                'gamma', 'g', [0.98, 0.999], # 0.99 is default value, since we have 0.99 variant in proj1.py, we don't need to rerun it
-                'polyak', 'p', [0.995],
+                'gamma', 'g', [0.99], # 0.99 is default value, since we have 0.99 variant in proj1.py, we don't need to rerun it
+                'polyak', 'p', [0, 0.9, 0.995, 1],
                 'start_steps', 'ss', [5000],
                 'batch_size', 'b', [64],
                 'hidden_unit', 'h', [64],
