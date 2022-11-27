@@ -138,6 +138,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Slurm
+# log
 *.out
 *.err
+*.json
+*.txt
