@@ -96,7 +96,7 @@ def quick_plot(labels, data_folders, colors=DEFAULT_COLORS, linestyles=DEFAULT_L
                 if not os.path.isdir(save_folder_path_with_y):
                     path = Path(save_folder_path_with_y)
                     path.mkdir(parents=True)
-                save_path_full = os.path.join(save_folder_path_with_y, save_name_with_env + '_' + y_to_plot + '.png')
+                save_path_full = os.path.join(save_folder_path_with_y, save_name_with_env + '_' + y_to_plot + '.pdf')
                 plt.savefig(save_path_full)
                 if verbose:
                     print(save_path_full)
