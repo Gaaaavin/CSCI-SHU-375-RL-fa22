@@ -20,6 +20,7 @@ def redq_sac(env_name, seed=0, epochs='mbpo', steps_per_epoch=1000,
              start_steps=5000, delay_update_steps='auto',
              utd_ratio=20, num_Q=10, num_min=2, q_target_mode='min',
              policy_update_delay=20,
+             reset=False,
              # following are bias evaluation related
              evaluate_bias=True, n_mc_eval=1000, n_mc_cutoff=350, reseed_each_epoch=True
              ):
@@ -138,6 +139,9 @@ def redq_sac(env_name, seed=0, epochs='mbpo', steps_per_epoch=1000,
         agent.store_data(o, a, r, o2, d)
         # let agent update
         agent.train(logger)
+        # reset
+        if reset and t == total_steps // 2:
+            agent.reset()
         # set obs to next obs
         o = o2
         ep_ret += r

@@ -258,4 +258,17 @@ class REDQSACAgent(object):
         # if there is no update, log 0 to prevent logging problems
         if num_update == 0:
             logger.store(LossPi=0, LossQ1=0, LossAlpha=0, Q1Vals=0, Alpha=0, LogPi=0, PreTanh=0)
+    
+    def _reset(self, model):
+        if isinstance(model, nn.Linear):
+            model.reset_parameters()
 
+    def reset(self):
+        # Reset Q-net
+        for q_net in self.q_net_list:
+            q_net.apply(self._reset)
+        for i in range(len(self.q_target_net_list)):
+            self.q_target_net_list[i].load_state_dict(self.q_net_list[i].state_dict())
+
+        # Reset P-net
+        self.policy_net.apply(self._reset)
