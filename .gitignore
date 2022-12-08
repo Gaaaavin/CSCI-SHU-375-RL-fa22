@@ -143,3 +143,4 @@ dmypy.json
 *.err
 *.json
 *.txt
+*.pkl
