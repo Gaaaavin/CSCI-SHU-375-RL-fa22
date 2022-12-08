@@ -9,8 +9,8 @@ standard_6_colors = ('tab:red', 'tab:orange', 'tab:blue', 'tab:brown', 'tab:pink
 envs = ['Hopper-v3', 'HalfCheetah-v3']
 data_path = '../data3/'
 
-# standard_ys = ['AverageTestEpRet', 'AverageQ1Vals', 'AverageNormQBias', 'StdNormQBias', 'Time']
-standard_ys = ['AverageNormQBias']
+standard_ys = ['AverageTestEpRet', 'AverageQ1Vals', 'AverageNormQBias', 'StdNormQBias', 'Time']
+# standard_ys = ['AverageTestEpRet']
 
 
 plot_proj3 = True
@@ -28,7 +28,5 @@ if plot_proj3:
         save_name='SAC_polyak',
         base_data_folder_path=data_path,
         y_value=standard_ys,
-        ymin=-1,
-        ymax=5
     )
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --verbose
-#SBATCH -p aquila,parallel
+#SBATCH -p aquila
 #SBATCH --time=168:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=12GB
