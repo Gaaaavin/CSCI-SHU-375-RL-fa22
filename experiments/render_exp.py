@@ -43,10 +43,10 @@ def render_agent(agent, test_env, max_ep_len, logger, n_eval=1, save_folder='./'
             logger.store(TestEpRet=ep_ret, TestEpLen=ep_len)
     return ep_return_list
 
-exp_name = 'exp_e300_q2_uf1_lr0.0003_g0.99_p0.995_ss5000_b128_h128'
+exp_name = 'exp_e500_q4_uf5_lr0.001_g0.99_p0.995_ss5000_b256_h256'
 seed = 1
 env_names = ['Hopper-v3', 'HalfCheetah-v3']
-epochs = [1, 100, 300]
+epochs = [1, 100, 300, 500]
 
 for env_name in env_names:
     for epoch in epochs:

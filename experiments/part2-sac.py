@@ -9,21 +9,21 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--setting', type=int, default=0)
     args = parser.parse_args()
-    data_dir = '../data_part2'
+    data_dir = '../data_part2_2'
 
     exp_prefix = 'exp'
 
     settings = ['env_name','',['Hopper-v3', 'HalfCheetah-v3'],
                 'seed','',[0, 1],
-                'epochs','e',[300],
-                'num_Q','q',[2],
-                'utd_ratio','uf',[1],
-                'lr', 'lr', [3e-4],
+                'epochs','e',[500],
+                'num_Q','q',[4],
+                'utd_ratio','uf',[5],
+                'lr', 'lr', [1e-3],
                 'gamma', 'g', [0.99],
                 'polyak', 'p', [0.995],
                 'start_steps', 'ss', [5000],
-                'batch_size', 'b', [128],
-                'hidden_unit', 'h', [128],
+                'batch_size', 'b', [256],
+                'hidden_unit', 'h', [256],
                 ]
 
     indexes, actual_setting, total, exp_name_full = get_setting_and_exp_name(settings, args.setting, exp_prefix)
